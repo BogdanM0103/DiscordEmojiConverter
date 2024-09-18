@@ -1,86 +1,51 @@
 import sys
 
+emojiDictionary = {
+    "A": [':regional_indicator_a:'],
+    "B": [':regional_indicator_b:'],
+    "C": [':regional_indicator_c:'],
+    "D": [':regional_indicator_d:'],
+    "E": [':regional_indicator_e:'],
+    "F": [':regional_indicator_f:'],
+    "G": [':regional_indicator_g:'],
+    "H": [':regional_indicator_h:'],
+    "I": [':regional_indicator_i:'],
+    "J": [':regional_indicator_j:'],
+    "K": [':regional_indicator_k:'],
+    "L": [':regional_indicator_l:'],
+    "M": [':regional_indicator_m:'],
+    "N": [':regional_indicator_n:'],
+    "O": [':regional_indicator_o:'],
+    "P": [':regional_indicator_p:'],
+    "Q": [':regional_indicator_q:'],
+    "R": [':regional_indicator_r:'],
+    "S": [':regional_indicator_s:'],
+    "T": [':regional_indicator_t:'],
+    "U": [':regional_indicator_u:'],
+    "V": [':regional_indicator_v:'],
+    "W": [':regional_indicator_w:'],
+    "X": [':regional_indicator_x:'],
+    "Y": [':regional_indicator_y:'],
+    "Z": [':regional_indicator_z:'],
+    "0": [':zero:'],
+    "1": [':one:'],
+    "2": [':two:'],
+    "3": [':three:'],
+    "4": [':four:'],
+    "5": [':five:'],
+    "6": [':six:'],
+    "7": [':seven:'],
+    "8": [':eight:'],
+    "9": [':nine:'],
+}
+
 def EmojiConverter(input):
-    characters = [];
-    for character in input:
-        characters.append(character)
-    for item in characters:
-        itemIndex = characters.index(item)
-        match item:
-            case 'a':
-                characters[itemIndex] = ':a:'
-            case 'b':
-                characters[itemIndex] = ':b:'
-            case 'c':
-                characters[itemIndex] = ':arrow_right_hook:'
-            case 'd':
-                characters[itemIndex] = ':leftwards_arrow_with_hook:'
-            case 'e':
-                characters[itemIndex] = ':e_mail:'
-            case 'f':
-                characters[itemIndex] = ':flags:'
-            case 'g':
-                caracters[itemIndex] = ':fuelpump:'
-            case 'h':
-                characters[itemIndex] = ':pisces:'
-            case 'i':
-                characters[itemIndex] = ':information:'
-            case 'j':
-                characters[itemIndex] = ':japan:'
-            case 'k':
-                characters[itemIndex] = ':leg:'
-            case 'l':
-                characters[itemIndex] = ':muscle:'
-            case 'm':
-                characters[itemIndex] = ':part_alternation_mark:'
-            case 'n':
-                characters[itemIndex] = ':capricorn:'
-            case 'o':
-                characters[itemIndex] = ':o2:'
-            case 'p':
-                characters[itemIndex] = ':parking:'
-            case 'q':
-                characters[itemIndex] = ':postal_horn:'
-            case 'r':
-                characters[itemIndex] = ':registered:'
-            case 's':
-                characters[itemIndex] = ':heavy_dollar_sign:'
-            case 't':
-                characters[itemIndex] = ':cross:'
-            case 'u':
-                characters[itemIndex] = ':ophiuchus:'
-            case 'v':
-                characters[itemIndex] = ':aries:'
-            case 'w':
-                characters[itemIndex] = ':regional_indicator_w:'
-            case 'x':
-                characters[itemIndex] = ':negative_squared_cross_mark:'
-            case 'y':
-                characters[itemIndex] = ':v:'
-            case 'z':
-                characters[itemIndex] = ':zzz:'
-            case '0':
-                characters[itemIndex] = ':zero:'
-            case '1':
-                characters[itemIndex] = ':one:'
-            case '2':
-                characters[itemIndex] = ':two:'
-            case '3':
-                characters[itemIndex] = ':three:'
-            case '4':
-                characters[itemIndex] = ':four:'
-            case '5':
-                characters[itemIndex] = ':five:'
-            case '6':
-                characters[itemIndex] = ':six:'
-            case '7':
-                characters[itemIndex] = ':seven:'
-            case '8':
-                characters[itemIndex] = ':eight:'
-            case '9':
-                characters[itemIndex] = ':nine:'
-                
-    print(characters);
+    word = []
+    for ch in input:
+        upper_ch = ch.upper()
+        if upper_ch in emojiDictionary:
+            word.append(emojiDictionary[upper_ch])
+    print(word)
 
     
 EmojiConverter("Hella");
