@@ -1,7 +1,7 @@
 import sys
 
 emojiDictionary = {
-    "A": [':regional_indicator_a:'],
+    "A": [':regional_indicator_a:', ':arrow_up_small:'],
     "B": [':regional_indicator_b:'],
     "C": [':regional_indicator_c:'],
     "D": [':regional_indicator_d:'],
@@ -40,12 +40,33 @@ emojiDictionary = {
 }
 
 def EmojiConverter(input):
+    #initialize empty list
     word = []
+
+    #occurences dictionary
+    occurences = {}
+
+    #check if input string is empty
+    if not input:
+        print("Input String is empty.")
+        return
+
+    #loop through each character of the input string
     for ch in input:
+        #capitalize the characters
         upper_ch = ch.upper()
+
+        if upper_ch in occurences:
+            occurences[upper_ch] += 1
+        else:
+            occurences[upper_ch] = 0
+        
+        #append the emoji to the list
         if upper_ch in emojiDictionary:
-            word.append(emojiDictionary[upper_ch])
+            #append the emoji that was not yet used in case we have more than 1 character of the same type in the word
+            word.append(emojiDictionary[upper_ch][occurences[upper_ch]])
+
     print(word)
 
     
-EmojiConverter("Hella");
+EmojiConverter("Heaao");
