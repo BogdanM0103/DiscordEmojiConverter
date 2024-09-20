@@ -1,7 +1,7 @@
 import sys
 
 emojiDictionary = {
-    "A": [':regional_indicator_a:', ':a:',':arrow_up_small:', '::'],
+    "A": [':regional_indicator_a:', ':a:',':arrow_up_small:'],
     "B": [':regional_indicator_b:', ':b:'],
     "C": [':regional_indicator_c:', ':star_and_crescent:'],
     "D": [':regional_indicator_d:', ':leftwards_arrow_with_hook:'],
@@ -39,7 +39,7 @@ emojiDictionary = {
     "9": [':nine:'],
 }
 
-def EmojiConverter(input):
+def emojiConverter(input):
     #initialize empty list
     word = []
 
@@ -61,12 +61,15 @@ def EmojiConverter(input):
         else:
             occurences[upper_ch] = 0
         
-        #append the emoji to the list
-        if upper_ch in emojiDictionary:
+        # ask if the character exists in the dictionary and if the number of occurrences
+        # inside the input word is less then the number of available options for said character
+        if upper_ch in emojiDictionary and occurences[upper_ch] < len(emojiDictionary[upper_ch]):
             #append the emoji that was not yet used in case we have more than 1 character of the same type in the word
             word.append(emojiDictionary[upper_ch][occurences[upper_ch]])
+        else:
+            return 'Not enough emojis to represent this word.'
 
-    print(word)
+    return word
 
     
-EmojiConverter("aaabbcc");
+print(emojiConverter("aaa"))
